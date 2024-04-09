@@ -285,7 +285,7 @@ let products = [
     {
         "id": 37,
         "name": "ซื้อ 1 แถม 1! Tuna Wrap",
-        "image":"Pro4.PNG",
+        "image":"pro4.PNG",
         "price": 100,
         "desc":"Promotion"
     }
