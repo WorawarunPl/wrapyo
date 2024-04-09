@@ -1,0 +1,269 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_ingredient_whole.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="">
+    <title>Admin page</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class="sidebar">
+        <h1 class="logo" style="font-weight: bold;">WRAPsYo!</h1>
+
+        <div class="sidebar-menus">
+            <a href="index_food_list.html"><ion-icon name="receipt-outline"></ion-icon> <i class="foodorder"></i><span>Food Order</span></a>
+            <a href="index_ingredient_whole.html"><ion-icon name="storefront-outline"></ion-icon> <i class="ingredient"></i><span>Ingredients</span></a>
+            <a href="index_notification.html"><ion-icon name="notifications-outline"></ion-icon><i class="notification"></i><span>Note</span></a>
+        </div>
+        <div class="sidebar-logout">
+            <a href="Home.html"><ion-icon name="log-out-outline"></ion-icon><i class="logout"></i><span>Logout</span></a>
+        </div> 
+    </div>
+    <!--main-->
+    <div class="main">
+        <div class="main-navbar">
+            <div class="message">
+                <span style="color: black;">Stock</span>
+            </div>  
+            <div class="profile">
+               <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+        <div class="main-highlight">
+            <!-- title section-->
+            <div class="main-header">
+                <h2 class="main-title">Vegetable</h2>
+                
+            </div>
+            <div class="table-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Ingredient</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>V1</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="lettuce.png"></td>
+                            <td>Lettuce</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector1" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="lettuce_have">Have</option>
+                                    <option value="lettuce_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                 
+                             </td>
+                        </tr>
+                        <tr>
+                            <td>V2</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="tomato.png"></td>
+                            <td>Tomato</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector2" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="tomato_have">Have</option>
+                                    <option value="tomato_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V3</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="cucumber.png"></td>
+                            <td>Cucumber</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector3" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="cucumber_have">Have</option>
+                                    <option value="cucumber_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V4</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="pickle.png"></td>
+                            <td>Pickle</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector4" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="pickle_have">Have</option>
+                                    <option value="pickle_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V5</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="pepper green.png"></td>
+                            <td>Green Pepper</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector5" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="peppergreen_have">Have</option>
+                                    <option value="peppergreen_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V6</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="red onion.png"></td>
+                            <td>Red Onion</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector6" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="redonion_have">Have</option>
+                                    <option value="redonion_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V7</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="Jalapeno.png"></td>
+                            <td>Jalapeno</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector7" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="Jalapeno_have">Have</option>
+                                    <option value="Jalapeno_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V8</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="Carrot.png"></td>
+                            <td>Carrot</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector8" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="Carrot_have">Have</option>
+                                    <option value="Carrot_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V9</td> <!--ถ้าเป็นรูปภาพให้ใส่img เอา-->
+                            <td><img src="Black Olive.png"></td>
+                            <td>Black Olive</td>
+                            <td>10</td>
+                            <td>
+                                <select  id="optionSelector9" class="optionSelector" onchange="checkAllSelected()">
+                                    <option value="BlackOlive_have">Have</option>
+                                    <option value="BlackOlive_out">Out of stock</option>
+                                </select>
+                            </td>
+                            <td>
+                                    <button> <a href="#"><ion-icon name="create-outline"></ion-icon> <i class="delete"></i></a> </button>
+                                     
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>      
+            </div>
+            
+
+            
+
+            <div class="pagination">
+                <div><a href="index_ingredient_whole.html"><ion-icon name="chevron-back"></ion-icon></a></div>
+
+                <div><a href="index_ingredient_meat.html"><ion-icon name="caret-back"></ion-icon></a></div>
+
+                <div><a href="index_ingredient_whole.html">1</a></div>
+
+                <div><a href="index_ingredient_meat.html">2</a></div>
+
+                <div><a href="index_ingredient_sauce.html"><ion-icon name="caret-forward"></ion-icon></a></div>
+
+                <div><a href="index_ingredient_topping.html"><ion-icon name="chevron-forward"></ion-icon></a></div>
+            </div>
+
+        </div>
+        <!--main menu-->
+    </div>
+    
+    <script>
+      
+        window.onload = function() {
+          // ตรวจสอบมีค่าที่เลือกที่ถูกเก็บไว้ใน Local Storage มั้ย
+          var storedSelection = localStorage.getItem("selectedOptions_ingredient_veget");
+          if (storedSelection) {
+            var selections = JSON.parse(storedSelection);
+            var selectors = document.getElementsByClassName("optionSelector");
+    
+            for (var i = 0; i < selectors.length; i++) {
+              selectors[i].value = selections[i];
+            }
+    
+            // ตรวจสอบทุกตัวเลือกถูกเลือกมั้ย
+            checkAllSelected();
+          }
+        };
+    
+        // เลือกตัวเลือกใหม่
+        function checkAllSelected() {
+          var selectors = document.getElementsByClassName("optionSelector");
+          var allSelected = true;
+    
+          for (var i = 0; i < selectors.length; i++) {
+            if (selectors[i].value === "") {
+              allSelected = false;
+              break;
+            }
+          }
+    
+          if (allSelected) {
+            var selectedOptions = [];
+    
+            for (var i = 0; i < selectors.length; i++) {
+              selectedOptions.push(selectors[i].value);
+            }
+    
+            localStorage.setItem("selectedOptions_ingredient_veget", JSON.stringify(selectedOptions)); // เก็บค่าที่เลือกไว้ใน Local Storage
+          }
+        }
+    
+      </script>
+    
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

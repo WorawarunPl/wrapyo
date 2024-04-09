@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" type="text/css" href="style_admin_login_page.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script> 
+  </head>
+  <body>
+    <img class="wave" src="bg_login.png" />
+    <div class="container">
+      <div class="img"></div>
+      <div class="login-content">
+        <form id="loginForm" onsubmit="return checkLogin()">
+          <img src="WRAPsYo_logo.png" />
+          <h2 class="title">Admin Login</h2>
+          <!--username-->
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <input type="text" placeholder="Username" id="username" name="username" required>
+              
+            </div>
+          </div>
+
+          <!--password-->
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <input type="password" placeholder="Password" id="password" name="password" required>
+            </div>
+          </div>
+
+          <!--Login-->
+          <a class="btn" href="">
+            
+            <div class="control_login">
+              <input type="submit" value="Login">
+            </div>
+            <div id="errorMessage" class="error-message">Invalid username or password.</div>
+          </a>
+        </form>
+       
+      </div>
+     
+    </div>
+
+    
+<script>
+function checkLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    
+    if (username === "WYadmin" && password === "wrapwrapyo") {
+        // เข้าแล้วไปหน้าอื่น
+        window.location.href = "index_food_list.html";
+        return false; 
+    } else {
+        // us,pwไม่ถูก
+        var errorMessage = document.getElementById("errorMessage");
+        errorMessage.style.display = "block";
+        return false;
+    }
+}
+</script>
+    
+    <script type="text/javascript" src="js/main_js.js"></script>
+  </body>
+</html>

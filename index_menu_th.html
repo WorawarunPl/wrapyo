@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>WRAPsYo</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="aside">
+            <ul>
+                <li><a href="Home_th.html">
+                    <img src="but1.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                    <p>หน้าหลัก</p>
+                  </a></li>
+                  <li><a href="Promotion_th.html">
+                    <img src="but2.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                    <p>โปรโมชั่น</p>
+                  </a></li>
+                  <li><a href="Recommend_th.html">
+                    <img src="but3.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                    <p>แนะนำ</p>
+                  </a></li>
+                  <li><a href="index_menu_th.html">
+                    <img src="but4.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                    <p>เมนู</p>
+                  </a></li>
+              </ul>
+            </div>
+
+            <div class="section">
+
+                <div class="head-con">
+                    <a href="admin_login_page.html">
+                      <img id="button1" src="logopng.png" alt="" style=" width:60px; 
+                      height:60px;
+                      border-radius: 100%; 
+                      left: 0px;
+                      "></a>
+                </div> 
+
+            <div class="container">
+                <header>
+                    <h1>เลือกวัตถุดิบของคุณ</h1>
+                    <div class="shopping">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="quantity">0</span>
+                    </div>
+                    <div class="control_mix_food">
+                        <img src="" id="foodImage" class="mix_food_display">
+                    </div>
+                </header>
+
+                <div class="list"></div>
+            </div>
+
+            <div class="scroll">
+                
+            <div class="card" style="overflow: auto;">
+                <h1>ใบเสร็จ</h1>
+                <h2 style="font-family: 'Montserrat',sans-serif; color: #c8c5c5; text-align: center;">
+                    Order Number: <span id="counter">12</span>
+                    
+                </h2>
+
+                <ul class="listCard">
+
+                </ul>
+
+
+                <div class="checkOut">
+                    <div class="closeShopping">ปิด</div>
+                    <div class="total">0</div>
+                    <div  onclick="handleSendOrderAndClearOrderInLocal()"><div class="order" id="Onumber">
+                        <button>สั่งเลย!</button></div></div>
+                </div><br>
+                <div class="payment-method">
+                    <input type="radio" id="cashCheckbox" value="cash"> เงินสด
+                    <input type="radio" id="promptpayCheckbox" value="promptpay"> พร้อมเพย์
+                </div>
+                <div id="paymentImage" style="display: none; margin-left: 80px;">
+                    <img src="promptpay.jpg" style="width: 350px; height: 350px; " >
+                    </div>
+                
+            </div>
+            </div>
+            
+            </div>
+
+    </div>
+
+    <script src="main_th.js"></script>
+
+    <script>
+        let MenuSelected = []
+        function handleMixFoods(idOfMenu) {
+           const correctIndex = idOfMenu + 1;
+
+           if(MenuSelected.includes(correctIndex)){
+               console.log("remove...")
+               const FilterData = MenuSelected.filter((data)=> data !== correctIndex);
+               
+               MenuSelected = FilterData
+           }else{
+               MenuSelected.push(correctIndex)
+           }
+
+       console.log("MenuSelected" , MenuSelected)
+       sessionStorage.setItem("MixFoodsIDX" , MenuSelected)
+
+       console.log("Clicked" , correctIndex)
+
+       const dataLocal = sessionStorage.getItem("MixFoodsIDX");
+       const container = document.querySelector('.control_mix_food');
+     if(dataLocal){
+       const dataIDX = dataLocal.split(","); // 1,2,3 => [1,2,3]
+       console.log("dataIDX" , dataIDX)
+   dataIDX.map(async (item,idx)=> {
+        const existingImages = container.querySelectorAll('img');
+      await existingImages.forEach(function(img){
+           img.remove()
+       })
+       let img = document.createElement('img');
+           img.src = 'pd' + item + '.PNG';
+           img.alt = "Food Image" + item;
+           img.classList.add('everyFoodCenter')
+           container.appendChild(img)
+   })
+}
+   }
+   </script>
+   <script>
+    const promptpayCheckbox = document.getElementById('promptpayCheckbox');
+    const paymentImage = document.getElementById('paymentImage');
+    
+    promptpayCheckbox.addEventListener('change', function() {
+      if (promptpayCheckbox.checked) {
+        paymentImage.style.display = 'block';
+      } else {
+        paymentImage.style.display = 'none';
+      }
+    });</script>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
