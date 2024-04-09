@@ -19,7 +19,6 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
-    
 }
 
 .redcross_icon {
@@ -28,7 +27,9 @@ body{
     left: 50%;
     transform: translate(-50%, 0%);
     z-index: 5;
-    
+    min-width: 0px;
+    width: 200px;
+    max-width: 200px;
 }
 
 
