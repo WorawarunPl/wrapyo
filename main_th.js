@@ -310,7 +310,11 @@ const page5 = localStorage.getItem("selectedOptions_ingredient_topping");
 const JSONPage5 = JSON.parse(page5);
 
 const initApp = () => {
+
+   
+   
     products.forEach((value, key) => {
+        console.log(value)
         let newDiv = document.createElement("div");
         newDiv.classList.add("item");
         newDiv.innerHTML = `
@@ -319,32 +323,35 @@ const initApp = () => {
             <div class = "title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
             <div class = "title">${value.desc}</div>
-            <button onclick = "addToCard(${key})">เลือก</button>
-            <div style="width: 100px; height: 100px; position: relative;">${value.id == 0   ? JSONPage1[0] == "tortilla_out"  ? "<img src='redcross.png' style='position: absolute; top: 20%; left: 60%;'" : "" : value.id == 1 ? JSONPage1[1] == "Wheat_out" ?  "<img src='redcross.png' style='position: absolute; top: 20%; left: 60%;'" : "" : ""}</div>
-            <div style="width: 100px; height: 100px; position: relative;">${value.id == 2 ? JSONPage2[0] == "meatball_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 60%; '"  : "" : value.id == 3 ? JSONPage2[1] == "spicychicken_out" ? "<img src='redcross.png' style='position: absolute; top: 20%; left: 60%;'" : "" :
-             value.id == 4 ? JSONPage2[2] == "chickenteriyaki_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" : value.id == 5 ? JSONPage2[3] == "dolly_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" :
-             value.id == 6 ? JSONPage2[4] == "shrimp_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" : value.id == 7 ? JSONPage2[5] == "ham_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" :
-             value.id == 8 ? JSONPage2[6] == "smokepork_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" : value.id == 9 ? JSONPage2[7] == "roastbeef_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" :
-             value.id == 10 ? JSONPage2[8] == "tuna_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%; '" : "" : value.id == 11 ? JSONPage2[9] == "vegetable_out" ? "<img src='redcross.png' style='position: absolute; top: 0%; left: 50%;'" : "" : ""
+            <div class="control_addcart">
+            <button onclick = "addToCard(${key})" style="; z-index: 1; " >Add To Cart</button>
+            <div class="redcross_icon" style="width: 200px; height: 50px;">${value.id == 0  ? JSONPage1[0] == "tortilla_out"  ? "<img src='redcross.png' style='max-width:50px'>" : "" : value.id == 1 ? JSONPage1[1] == "Wheat_out" ?  "<img src='redcross.png' style='max-width:50px'" : "" : ""}</div>
+            <div class="redcross_icon" style="width: 200px; height: 50px; ;">${value.id == 2 ? JSONPage2[0] == "meatball_out" ? "<img src='redcross.png' style='max-width:50px'"  : "" : value.id == 3 ? JSONPage2[1] == "spicychicken_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+             value.id == 4 ? JSONPage2[2] == "chickenteriyaki_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 5 ? JSONPage2[3] == "dolly_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+             value.id == 6 ? JSONPage2[4] == "shrimp_out" ? "<img src='redcross.png' style='max-width:50px'" : "" : value.id == 7 ? JSONPage2[5] == "ham_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+             value.id == 8 ? JSONPage2[6] == "smokepork_out" ? "<img src='redcross.png' style='max-width:50px'" : "" : value.id == 9 ? JSONPage2[7] == "roastbeef_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+             value.id == 10 ? JSONPage2[8] == "tuna_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 11 ? JSONPage2[9] == "vegetable_out" ? "<img src='redcross.png' style='max-width:50px'" : "" : ""
             }</div>
-            <div style="width: 100px; height: 100px; position: relative;">${value.id == 12 ? JSONPage3[0] == "lettuce_out" ? "<img src='redcross.png' style='position: absolute; top: 20%; left: 50%; '" : "" : value.id == 13 ? JSONPage3[1] == "tomato_out" ? "<img src='redcross.png' style='position: absolute; top: 20%; left: 50%; '" : "" :
-            value.id == 14 ? JSONPage3[2] == "cucumber_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" : value.id == 15 ? JSONPage3[3] == "pickle_out" ? "<img src='redcross.png' style='position: absolute; top: 5%; left: 50%; '" : "" :
-            value.id == 16 ? JSONPage3[4] == "peppergreen_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" : value.id == 17 ? JSONPage3[5] == "redonion_out" ? "<img src='redcross.png' style='position: absolute; top: 5%; left: 50%; '" : "" :
-            value.id == 18 ? JSONPage3[6] == "Jalapeno_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" : value.id == 19 ? JSONPage3[7] == "Carrot_out" ? "<img src='redcross.png' style='position: absolute; top: 5%; left: 50%; '" : "" :
-            value.id == 20 ? JSONPage3[8] == "BlackOlive_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" :""
+            <div   class="redcross_icon"   style="width: 200px; height: 50px; ;">${value.id == 12 ? JSONPage3[0] == "lettuce_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 13 ? JSONPage3[1] == "tomato_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+            value.id == 14 ? JSONPage3[2] == "cucumber_out" ? "<img src='redcross.png' style='max-width:50px'" : "" : value.id == 15 ? JSONPage3[3] == "pickle_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+            value.id == 16 ? JSONPage3[4] == "peppergreen_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 17 ? JSONPage3[5] == "redonion_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+            value.id == 18 ? JSONPage3[6] == "Jalapeno_out" ? "<img src='redcross.png' style='max-width:50px'" : "" : value.id == 19 ? JSONPage3[7] == "Carrot_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :
+            value.id == 20 ? JSONPage3[8] == "BlackOlive_out" ? "<img src='redcross.png' style='max-width:50px'" : "" :""
             }</div>
-            <div style="width: 100px; height: 100px; position: relative;">${value.id == 21 ? JSONPage4[0] == "BBQ_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" : value.id == 22 ? JSONPage4[1] == "cheddarcheesesauce_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" :
-            value.id == 23 ? JSONPage4[2] == "chilli_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" : value.id == 24 ? JSONPage4[3] == "HoneyMastard_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" :
-            value.id == 25 ? JSONPage4[4] == "Ketchup_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" :value.id == 26 ? JSONPage4[5] == "mayonnaise_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" :
-            value.id == 27 ? JSONPage4[6] == "spicymayo_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" : value.id == 28 ? JSONPage4[7] == "ThousandIsland_out" ? "<img src='redcross.png' style='position: absolute; top:5%; left: 50%; '" : "" :""
+            <div   class="redcross_icon" style="width:200px; height: 50px; ;">${value.id == 21 ? JSONPage4[0] == "BBQ_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 22 ? JSONPage4[1] == "cheddarcheesesauce_out" ? "<img src='redcross.png' style='max-width:50px '" : "" :
+            value.id == 23 ? JSONPage4[2] == "chilli_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 24 ? JSONPage4[3] == "HoneyMastard_out" ? "<img src='redcross.png' style='max-width:50px '" : "" :
+            value.id == 25 ? JSONPage4[4] == "Ketchup_out" ? "<img src='redcross.png' style='max-width:50px '" : "" :value.id == 26 ? JSONPage4[5] == "mayonnaise_out" ? "<img src='redcross.png' style='max-width:50px '" : "" :
+            value.id == 27 ? JSONPage4[6] == "spicymayo_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 28 ? JSONPage4[7] == "ThousandIsland_out" ? "<img src='redcross.png' style='max-width:50px '" : "" :""
             }</div>
-            <div style="width: 100px; height: 100px; position: relative;">${value.id == 29 ? JSONPage5[0] == "MozzarellaCheese_out" ? "<img src='redcross.png' style='position: absolute; top:0%; left: 60%; '" : "" : value.id == 30 ? JSONPage5[1] == "CheddarCheese_out" ? "<img src='redcross.png' style='position: absolute; top:0%; left: 60%; '" : "" :
-            value.id == 31 ? JSONPage5[2] == "bacon_out" ? "<img src='redcross.png' style='position: absolute; top:0%; left: 60%; '" : "" : value.id == 32 ? JSONPage5[3] == "Scrambledeggs_out" ? "<img src='redcross.png' style='position: absolute; top:0%; left: 60%; '" : "" : ""
+            <div  class="redcross_icon"  style="width: 200px; height: 50px; ;">${value.id == 29 ? JSONPage5[0] == "MozzarellaCheese_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 30 ? JSONPage5[1] == "CheddarCheese_out" ? "<img src='redcross.png' style='max-width:50px '" : "" :
+            value.id == 31 ? JSONPage5[2] == "bacon_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : value.id == 32 ? JSONPage5[3] == "Scrambledeggs_out" ? "<img src='redcross.png' style='max-width:50px '" : "" : ""
             }</div>
-        `;
+            </div>
+            `;
         list.appendChild(newDiv)
     })
 }
+
 
 initApp()
 
