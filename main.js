@@ -263,28 +263,28 @@ let products = [
     {
         "id": 34,
         "name": "Buy 3 Get 1! Chicken Wrap",
-        "image":"pro1.png",
+        "image":"pro1.PNG",
         "price": 285,
         "desc":"Promotion"
     },
     {
         "id": 35,
         "name": "Sale! Ham Cheese Wrap",
-        "image":"pro2.png",
+        "image":"pro2.PNG",
         "price": 90,
         "desc":"Promotion"
     },
     {
         "id": 36,
         "name": "Sale! Smoked Pork Wrap",
-        "image":"pro3.png",
+        "image":"pro3.PNG",
         "price": 120,
         "desc":"Promotion"
     },
     {
         "id": 37,
         "name": "Buy 1 Get 1! Tuna Wrap",
-        "image":"Pro4.png",
+        "image":"Pro4.PNG",
         "price": 100,
         "desc":"Promotion"
     }
