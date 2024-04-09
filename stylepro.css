@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {margin: 0;}
+.main {
+    display: grid;
+    grid-template-columns:150px, 1fr;
+}
+
+
+.aside {
+    background-color: #dab0e6;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    position: fixed;
+    height: 100dvh;
+    overflow-x: auto;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.aside ul {
+    list-style: none;
+}
+
+.aside ul li {
+    margin: 2rem 0;
+}
+
+.aside ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    text-align: center;
+    display: block;
+}
+
+.section {
+    width: 90%;
+    float: left;
+    margin-left: 10%;
+    /* padding: 3rem; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 1rem;
+    align-items: center;
+    /* height: 100dvh; */
+}
+
+.box{
+    position: relative;
+    margin: 0.5rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(4, 64, 54 / 10%);
+    padding: 10px;
+    /* background-color: #f5f6e2; */
+    background-color: hsl(304, 71%, 89%);
+    /* background-color: rgb(255, 192, 214); */
+}
+
+.box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    /* background-color: hsl(308, 6%, 26%); */
+}
+
+.box h2{
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* padding-left: 3rem; */
+    /* overflow-wrap: anywhere; */
+}
+
+.box span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.box .bx {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    background: #ab60a9;
+    border-radius: 0 0.5rem 0 0.5rem;
+    padding: 5px 8px;
+}
+.box .bx:hover {
+    background: #934e90;
+}
+
+
+.pro img {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    font-size: 4px;
+    /* background: #ab60a9; */
+    /* padding: 5px 8px; */
+    /* margin: auto; */
+    height: 80%;
+    transition: transform .2s;
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+.pro img:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+  overflow: hidden;
+   
+}
+
+@media screen and (max-width: 400px) {
+    ul li a {
+      width: 100%;
+      float: none;
+    }
+    
+}

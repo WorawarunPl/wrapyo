@@ -1,0 +1,220 @@
+:root{
+    --primaryColor: #DAB0E6;
+    --secondaryColor: #F07888;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softPurpleColor: #D3D3F4;
+    --softPinkColor: #FFDAF1;
+    --darkPurpleColor: #774CAD;
+    --darkPinkColor: #E15568;
+    --lightYellow: #FFFCB5;
+    --grayColor: #f2f2f2;
+    --softGreen: #C9F8BD;
+    --softYellow: #F8F2BD;
+    --softBlueColor: #BDE6F8;
+    --softOrange: #FFD8B3;
+    --softred: #FF9CAB;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.sidebar {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2%;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    
+}
+
+.sidebar-menus {
+    display: flex;
+    flex-direction: column;
+    
+}
+.sidebar-menus a ,.sidebar-logout a{
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color:var(--whiteColor);
+    
+}
+
+.sidebar-menus a ion-icon , .sidebar-logout a ion-icon{
+    font-size: 25px;
+}
+.sidebar-menus a:hover , .sidebar-logout a:hover{
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+}
+.main {
+    width: 100%;
+    height: 1000px;
+    /*min-height: 100vh;*/
+    padding: 2%;
+    background-color: var(--softPinkColor);
+    margin-left: 270px;
+}
+.main-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.message{
+    width: 60%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    background-color:var(--whiteColor);
+    border-radius: 20px;
+}
+.message span{
+    font-size: 50px;
+    font-weight: bold;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    text-align: left;
+}
+.message:hover{
+    box-shadow: rgba(18, 19, 21, 0.522) 0px 8px 24px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    
+}
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--whiteColor);
+    font-size: 40px;
+    color: var(--darkPurpleColor);
+    text-decoration: none;
+    padding: 0 10px;
+    height: 60px;
+    border-radius: 80%;
+    margin-left: 400px;
+}
+.user:hover{
+    box-shadow: rgba(18, 19, 21, 0.522) 0px 8px 24px;
+}
+.main-highlight{
+    margin: 3% 0;
+    padding: 2%;
+    width: 95%;
+    height: 85%;
+    background-color: var(--whiteColor);
+    border-radius: 8px;
+}
+h2,p{
+    font-size: 20px;
+    font-weight: normal;
+}
+ul, li{
+    list-style: none;
+}
+ul{
+    overflow: hidden;
+    padding: 60px; /* space screen*/
+
+}
+ul li a{
+    text-decoration: none;
+    color: var(--blackColor);
+    background-color: var(--softPurpleColor);
+    display: block;
+    height: 190px;
+    width: 190px;
+    padding: 20px; /*space between*/
+    margin: 20px;
+    margin-top: 2px;
+    box-shadow: 5px 5px 5px rgba(18, 19, 21, 0.522);
+    border-radius: 8px;
+    transition: transform .15s linear;
+}
+ul li{
+    margin: 16px;
+    float: left;
+}
+ul li h2{
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+ul li p{
+    font-size: 17px;
+}
+
+ul li:nth-child(even) a{
+    /*transform: rotate(4deg);*/
+    position: relative;
+    top: 5px;
+    background-color: var(--softBlueColor);
+}
+ul li:nth-child(3n) a{
+    /*transform: rotate(-3deg);*/
+    position: relative;
+    top: -5px;
+    background-color: var(--softGreen);
+}
+ul li:nth-child(4n) a{
+    /*transform: rotate(-3deg);*/
+    position: relative;
+    top: -5px;
+    background-color: var(--lightYellow);
+}
+ul li:nth-child(5n) a{
+   /* transform: rotate(5deg);*/
+    position:relative;
+    top:-10px;
+    background-color: var(--softred);
+}
+ul li:nth-child(6n) a{
+    /* transform: rotate(5deg);*/
+     position:relative;
+     top:-10px;
+     background-color: var(--whiteColor);
+ }
+ul li a:hover, ul li a:focus{
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+    /*transition: rotate(5deg);*/
+    transform: scale(1.25);
+    position: relative;
+    z-index: 5;
+}
+
+::-webkit-scrollbar{
+    height: 20px;
+    width: 20px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}

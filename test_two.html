@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หลังบ้าน</title>
+</head>
+<body>
+  <h1>จัดการสินค้า</h1>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>ชื่อสินค้า</th>
+        <th>สถานะ</th>
+      </tr>
+    </thead>
+    <tbody id="data-table-body">
+      <tr>
+        <td>สินค้าที่ 1</td>
+        <td><button onclick="sendToFrontend('สินค้าที่ 1 มีอยู่')">เลือก</button></td>
+      </tr>
+      <tr>
+        <td>สินค้าที่ 2</td>
+        <td><button onclick="sendToFrontend('สินค้าที่ 2 หมด')">เลือก</button></td>
+      </tr>
+      <!-- เพิ่มข้อมูลสินค้าต่าง ๆ ตามต้องการ -->
+    </tbody>
+  </table>
+
+  <script>
+    function sendToFrontend(message) {
+      localStorage.setItem("selectedOption", message);
+      // Redirect หน้าไปที่หน้าบ้านหลังจากที่เลือกตัวเลือก
+      window.location.href = "หน้าบ้าน.html";
+    }
+  </script>
+</body>
+</html>

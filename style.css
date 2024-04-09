@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat',sans-serif;
+}
+
+body{
+    height: 100vh;
+    /* position: fixed; */
+    background: #fafafa;
+    grid-template-columns:150px, 1fr;
+}
+
+.control_addcart {
+    width: 100%;
+    height: 50px;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+.redcross_icon {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 5;
+    
+}
+
+
+.aside {
+    background-color: #dab0e6;
+    list-style-type: none;
+    top: 0;
+    width: 10%;
+    position: fixed;
+    height: 100vh;
+    overflow-x: auto;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.aside ul {
+    list-style: none;
+}
+
+.aside ul li {
+    margin: 2rem 0;
+}
+
+.aside ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    text-align: center;
+    display: block;
+}
+
+.container{
+    width: 50vw;
+    margin: auto;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.container h1{
+    color: #c8c5c5;
+}
+
+.container h2{
+    color: #c8c5c5;
+
+}
+
+.head-con{
+    /*border: 1px solid red;*/
+    justify-content: flex-end;
+    display: flex;
+    margin-left: 1200px;
+    
+   
+}
+.head-con li{
+    border: 20px;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 2px;
+
+}
+
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 10px;
+}
+
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+
+header .shopping i{
+    font-size: 3rem;
+    color: #c8c5c5;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+
+header .shopping i:hover{
+    color: #dab0e6;
+}
+
+header .shopping span{
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    background: red;
+    padding: 3px 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ---------------- */
+
+.card{
+    position: fixed;
+    top: 0;
+    left: 100%; 
+    width: 500px;
+    height: 90%;
+    background-color: beige;;
+    border-left: 1px solid #dab0e6;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.active .card{
+    left: calc(100% - 500px);
+}
+
+.active .container{
+    transform: translateX(-200px);
+    -webkit-transform: translateX(-200px);
+    -moz-transform: translateX(-200px);
+    -ms-transform: translateX(-200px);
+    -o-transform: translateX(-200px);
+}
+
+.card h1{
+    color: #dab0e6;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.card .checkOut{
+    /* position: absolute; */
+    position: fixed;
+    bottom: 0;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.card .checkOut div{
+    background-color: #dab0e6;
+    color: #efefef;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card .checkOut div:nth-child(2) {
+    background-color: #cc97db;
+    color: #efefef;
+}
+
+.card .checkOut .order button{
+    color: #fff;
+    background-color: hsl(0, 0%, 0%);
+    width: 180px;
+    height: 70px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 18px;
+    bottom: 80px;
+    /* position: fixed; */
+}
+
+/*.payment-method{
+    
+}*/
+
+
+
+
+.container .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.list .item{
+    text-align: center;
+    background-color: #cc97db;
+    padding: 20px;
+    box-shadow: 0 50px 50px rgba(146, 146, 146, 0.25);
+    letter-spacing: 1px;
+    transition: all 0.25s ease ;
+    -webkit-transition: all 0.25s ease ;
+    -moz-transition: all 0.25s ease ;
+    -ms-transition: all 0.25s ease ;
+    -o-transition: all 0.25s ease ;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.control_mix_food {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.everyFoodCenter {
+    position: absolute;
+    top: 50;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.control_mix_food img{
+    max-width: 300px;
+    height: auto;
+}
+
+.list .item:hover{
+    background-color: #cc97db;
+}
+
+.list .item img{
+    width: 90%;
+    /* height: 250px; */
+}
+
+.list .item .title{
+    font-weight: 600;
+    color: #efefef;
+}
+
+.list .item .price{
+    margin: 10px;
+    color: #efefef;
+}
+
+.list .item button{
+    background-color: #cc97db;
+    color: #efefef;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    border: 3px solid #efefef;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+
+.list .item button:hover{
+    background-color: #c395d0;
+    color: #efefef;
+}
+
+
+/* ---------------------- */
+
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+
+.listCard .count{
+    margin: 0 10px;
+    color: #cc97db;
+    font-size: 1.2rem;
+}
+
+.cardTitle, .cardPrice{
+    color: #cc97db;
+}
+
+
+
+.cardButton{
+    width: 28px;
+    height: 28px;
+    color: #efefef;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card::-webkit-scrollbar{
+    height: 20px;
+    width: 20px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    /* padding: 10px; */
+    position: fixed;
+}
+.card::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.card::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.payment-method {
+    margin-left: 40px;
+    padding: 5px;
+
+}
+
+

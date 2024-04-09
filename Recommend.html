@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>WrapYo</title>
+    <meta name="viewport" content="width=device-width", initial-scale=1.0 , minimum-scale=1, maximum-scale=1" />
+    
+    <link rel="stylesheet" href="stylerec.css">
+</head>
+
+
+<body>
+  <div class="main">
+
+
+    <div class="aside">
+            <ul>
+              <li><a href="Home.html">
+                <img src="but1.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                <p>Home</p>
+              </a></li>
+              <li><a href="Promotion.html">
+                <img src="but2.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                <p>Promotion</p>
+              </a></li>
+              <li><a href="Recommed.html">
+                <img src="but3.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                <p>Recommend</p>
+              </a></li>
+              <li><a href="index_menu.html">
+                <img src="but4.png" alt="" style="width:100px;height:100px;border-radius: 100%;">
+                <p>Menu</p>
+              </a></li>
+              </ul>
+            </div>
+
+
+
+        <div class="section">
+          <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 5</div>
+              <img src="recommend1.jpg" style="width:100%">
+              <!-- <div class="text">Caption Text</div> -->
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 5</div>
+              <img src="recommend2.jpg" style="width:100%">
+              <!-- <div class="text">Caption Two</div> -->
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 5</div>
+              <img src="recommend3.jpg" style="width:100%">
+              <!-- <div class="text">Caption Three</div> -->
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 5</div>
+              <img src="recommend4.jpg" style="width:100%">
+              <!-- <div class="text">Caption Three</div> -->
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">5 / 5</div>
+              <img src="recommend5.jpg" style="width:100%">
+              <!-- <div class="text">Caption Three</div> -->
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+              <span class="dot" onclick="currentSlide(5)"></span> 
+            </div>
+
+
+        </div>
+      </div>
+
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+    
+    </body>
+    </html>
